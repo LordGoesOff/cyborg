@@ -19,6 +19,12 @@ $getservervar[prefix]setprefix: Set the guilds prefix.
 $getservervar[prefix]vote: Link to vote for bot.
 $getservervar[prefix]invite: Invite me to your servers.`
 })
+//for eval you can use $djsEval[code] to evaluate a discord.js code
+bot.command({
+    name: "eval", //command trigger
+    code: `$eval[$message]
+    $onlyForIDs[$botownerid;You aren't my owner.]`
+})
 
 bot.command({
     name: "$alwaysExecute",
@@ -129,7 +135,7 @@ $setglobaluserVar[gtnattempts;$sum[$getglobaluserVar[gtnattempts];1]]
 $onlyif[$message[1]>=$getservervar[n1];The number is a random number from $getservervar[n1] to $getservervar[n2]. You provided a number smaller than $getservervar[n1].]
 $onlyif[$message[1]<=$getservervar[n2];The number is a random number from $getservervar[n1] to $getservervar[n2]. You provided a number bigger than $getservervar[n2].]
 $onlyif[$getservervar[winning_number]!=Ended. start again with the gtn command.;Looks like the last gtn has ended, you will have to get a staff to re-set it up.]
-$onlyif[$isNumber[$message]==true;]
+$onlyif[$isNumber[$message]==true;Please only enter a number. This is a Guess The Number Channel.]
 $onlyif[$channelid==$getservervar[guess_the_number_channel];]
 $onlyIf[$getservervar[gtn]==true;]`
 });
