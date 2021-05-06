@@ -14,3 +14,4 @@ Credits are not needed.
 Vote for us at https://top.gg/bot/693293244439593073/vote
 
 **Don't forget to star if you use this!**
+ok bye fr now
