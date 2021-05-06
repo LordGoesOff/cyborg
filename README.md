@@ -8,5 +8,7 @@ So first, here's a description of the gtn commands.
 -gtnNumber: Tells you the Guess The Number number that users are trying to guess. Helps with hints!
 This is it, thank you so much and hope you enjoy me! <33
 
+Do not forget to put the package.json code, it will not work without it.
+
 Credits are not needed.
 Vote for us at https://top.gg/bot/693293244439593073/vote
