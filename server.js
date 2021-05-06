@@ -7,12 +7,48 @@ const bot = new Aoijs.Bot({
 
 bot.onMessage();
 
+bot.command({
+    name: "help", //command trigger
+    code: `$getservervar[prefix]gtn: Put two numbers, a random number from number 1, to number 2. You will be DMed that number.
+$getservervar[prefix]gtnStats: Your/The server's GTN stats.
+$getservervar[prefix]gtnNumber: Get the secret number that people are trying to guess!
+$getservervar[prefix]disablegtn: End the game of GTN.
+$getservervar[prefix]source: Visit my source code.
+$getservervar[prefix]ping: Pong!
+$getservervar[prefix]setprefix: Set the guilds prefix.
+$getservervar[prefix]vote: Link to vote for bot.
+$getservervar[prefix]invite: Invite me to your servers.`
+})
+
+bot.command({
+    name: "$alwaysExecute",
+    code: `Hello $usertag, my prefix in $servername is $getservervar[prefix]. Use $getservervar[prefix]help to see my list of commands!
+$onlyIf[$mentioned[1]==$clientID;]`
+});
+
+bot.command({
+    name: "setprefix",
+    code: `$setservervar[prefix;$message[1]]
+My new prefix in this guild is now \`$message[1]\`.
+$onlyperms[manageserver;You're missing the MANAGE_SERVER permission which is required to use this command.]
+$argscheck[>1;What do you want the prefix to be set as?]`
+});
+
+bot.command({
+    name: "vote",
+    code: `Vote here: https://top.gg/bot/693293244439593073/vote`
+});
+
 bot.readyCommand({
-  channel: "channelid-for-restart-messages-to-show",
+  channel: "channelid-for-restart-messages",
   code:
     "I was restarted. Either a automatic restart, or an update. Love you all!"
 });
 
+bot.command({
+    name: "source",
+    code: `See my source code here: https://github.com/Lxrdly/cyborg`
+});
 
 //variables
 bot.variables({
@@ -24,7 +60,8 @@ bot.variables({
   gtnattempts: "0",
   gtnstatus: "No ongoing game.",
   n1: "",
-  n2: ""
+  n2: "",
+  prefix: "-"
 });
 //get the number that users are trying to guess
 bot.command({
