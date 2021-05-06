@@ -13,4 +13,4 @@ Do not forget to put the package.json code, it will not work without it.
 Credits are not needed.
 Vote for us at https://top.gg/bot/693293244439593073/vote
 
-Star us pls lmfaoo
+**Don't forget to star if you use this!**
